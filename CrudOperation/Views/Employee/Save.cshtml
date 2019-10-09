@@ -1,0 +1,32 @@
+﻿@model CrudOperation.Models.EmployeeInfo
+    <h2>Save</h2>
+@using (Html.BeginForm("Save","Employee",FormMethod.Post, new { id= "popupForm" }))
+{
+    if (Model !=null&& Model.EmployeeID>0)
+    {
+        @Html.HiddenFor(a=>a.EmployeeID)
+    }
+
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(a => a.Name, new { @class="form-control"})
+        @Html.ValidationMessageFor(a=>a.Name)
+        <label>Position</label>
+        @Html.TextBoxFor(a => a.Position, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Position)
+        <label>Office</label>
+        @Html.TextBoxFor(a => a.Office, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Office)
+        <label>Age</label>
+        @Html.TextBoxFor(a => a.Age, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Age)
+        <label>Salary</label>
+        @Html.TextBoxFor(a => a.Salary, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Salary)
+    </div>
+
+    <div>
+        <input type="submit"value="Save"/>
+    </div>
+
+}
